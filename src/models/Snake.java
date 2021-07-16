@@ -8,11 +8,16 @@ public class Snake {
 
     public Snake() {
         aLBodySnake = new ArrayList<>();
+        initPositionSnake();
+    }
+
+    private void initPositionSnake() {
+        aLBodySnake.add(new PartSnake((short) 20, (short) 20));
     }
 
     public void followTheNextPart() {
-        for (int i = aLBodySnake.size() - 1; i >= 0; i--) {
-            aLBodySnake.get(i).setMoves(aLBodySnake.get(i + 1).getMoves());
+        for (int i = aLBodySnake.size() - 1; i > 0; i--) {
+            aLBodySnake.get(i).setMoves(aLBodySnake.get(i - 1).getMoves());
         }
     }
 
