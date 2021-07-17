@@ -18,6 +18,7 @@ public class Snake {
     public void followTheNextPart() {
         for (int i = aLBodySnake.size() - 1; i > 0; i--) {
             aLBodySnake.get(i).setMoves(aLBodySnake.get(i - 1).getMoves());
+            aLBodySnake.get(i).movePart();
         }
     }
 
